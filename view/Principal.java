@@ -1,30 +1,34 @@
 package view;
 
-import model.ContaEspecial;
-import model.ContaPoupanca;
-
+import model.Animal;
+import model.Peixe;
+import model.Mamifero;
 
 public class Principal {
     public static void main(String[] args) {
-        ContaPoupanca poupanca = new ContaPoupanca("Goku", 123456, 1000.0f, 10);
-        ContaEspecial especial = new ContaEspecial("Gohan", 789012, 2000.0f, 500.0f);
+        Animal camelo = new Animal();
+        camelo.alteraNome("Camelo");
+        camelo.alteraComprimento(150);
+        camelo.alteraCor("Amarelo");
+        camelo.alteraVelocidade(2.0f);
+        camelo.dados();
+        System.out.println("_______________________________");
 
-        poupanca.sacar(200.0f);
-        especial.sacar(300.0f);
+        Peixe tubarao = new Peixe();
+        tubarao.alteraNome("Tubarão");
+        tubarao.alteraComprimento(300);
+        tubarao.alteraVelocidade(1.5f);
+        tubarao.alteraCaracteristica("Barbatanas e cauda");
+        tubarao.dados();
+        System.out.println("__________________________");
 
-        poupanca.sacar(1500.0f);
-        especial.sacar(3000.0f);
-
-        especial.sacar(400.0f);
-        especial.sacar(2000.0f);
-
-        poupanca.depositar(500.0f);
-        especial.depositar(1000.0f);
-
-        poupanca.calcularNovoSaldo(0.5f);
-        System.out.println("Dados da Conta Poupança: - " + poupanca.getCliente() + ", Número da Conta - "
-                + poupanca.getNumConta() + ", Saldo - " + poupanca.getSaldo());
-        System.out.println("Dados da Conta Especial: - " + especial.getCliente() + ", Número da Conta - "
-                + especial.getNumConta() + ", Saldo - " + especial.getSaldo());
+        Mamifero urso = new Mamifero();
+        urso.alteraNome("Urso-do-canadá");
+        urso.alteraComprimento(180);
+        urso.alteraCor("Vermelho");
+        urso.alteraVelocidade(0.5f);
+        urso.alteraAlimento("Mel");
+        urso.dados();
+        System.out.println("_________________________________________________");
     }
 }
